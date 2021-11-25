@@ -8,19 +8,21 @@ using static SpecFlowTester.Pages.GoogleTestPages;
 namespace SpecFlowTester.Steps
 {
     [Binding]
-    public sealed class GoogleTestSteps
+    public sealed class GoogleHomepageTestSteps
     {
 
         // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
 
         private readonly ScenarioContext _scenarioContext;
 
-        public GoogleTestSteps(ScenarioContext scenarioContext)
+        public GoogleHomepageTestSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
         }
 
         static IWebDriver driver;
+
+        //Blok wspóldzielonych metod
 
         [Given(@"I open homepage ""(.*)""")]
         public void GivenIOpenHomepage(string url)
@@ -30,11 +32,16 @@ namespace SpecFlowTester.Steps
             Navigate(driver, url);
         }
 
+        //Blok metod testu @Searchbar
+
         [Then(@"Homepage should appear")]
         public void ThenHomepageShouldAppear()
         {
-            Assert.IsTrue(GoogleLogo(driver).Displayed);
+            Assert.IsTrue(GoogleSignIn(driver).Displayed);
         }
+
+        //Blok metod testu @SearchingSomething
     }
+        
 }
 

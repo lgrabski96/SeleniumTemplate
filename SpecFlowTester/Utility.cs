@@ -13,5 +13,10 @@ namespace SpecFlowTester
         {
             driver.Navigate().GoToUrl(url);
         }
+
+        public static string SearchedFrase()
+        {
+            return "something";
+        }
     }
 }
