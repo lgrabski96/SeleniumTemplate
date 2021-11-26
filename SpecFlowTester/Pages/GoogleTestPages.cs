@@ -5,6 +5,17 @@ namespace SpecFlowTester.Pages
 {
     class GoogleTestPages
     {
+        public static IWebElement GooglePermisions(IWebDriver driver)
+        {
+            return driver.FindElement(By.XPath("//div[@id=\"uMousc\"]"));
+        }
+
+        public static IWebElement GooglePermisionsAcceptButton(IWebDriver driver)
+        {
+            return driver.FindElement(By.XPath("//button[@id=\"L2AGLb\"]"));
+        }
+        
+
         public static IWebElement GoogleSignIn(IWebDriver driver)
         {
             return driver.FindElement(By.XPath("//*[text()='Sign in']"));

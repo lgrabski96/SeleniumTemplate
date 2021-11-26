@@ -32,7 +32,10 @@ namespace SpecFlowTester.Steps
 
             Navigate(driver, url);
 
-            Thread.Sleep(3000); // wiem że słabe ale chrome odwala
+            if (GooglePermisions(driver).Displayed)
+            {
+                GooglePermisionsAcceptButton(driver).Click();
+            }
         }
 
         [When(@"I enter searched frase")]

@@ -25,6 +25,10 @@ namespace SpecFlowTester.Drivers
 			ChromeOptions ChromeDriverOptions = new ChromeOptions();
 			ChromeDriverOptions.AddArguments(@"--incognito");
 			ChromeDriverOptions.AddArgument(@"--start-maximized");
+			ChromeDriverOptions.AddUserProfilePreference("disable-popup-blocking", "true");
+			ChromeDriverOptions.AddArguments("--disable-extensions");
+			//ChromeDriverOptions.AddExcludedArgument("enable-automation");
+			//ChromeDriverOptions.AddAdditionalCapability("useAutomationExtension", false);
 
 			//DesiredCapabilities ChreomeDriverCapabilities = DesiredCapabilities.chrome();
 			//ChreomeDriverCapabilities.setCapability(ChromeOptions.CAPABILITY, ChromeDriverOptions);
