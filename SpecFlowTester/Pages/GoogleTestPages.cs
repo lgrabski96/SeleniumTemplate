@@ -17,13 +17,14 @@ namespace SpecFlowTester.Pages
 
         public static IWebElement GoogleSearchButton(IWebDriver driver)
         {
-            return driver.FindElement(By.Name("Google Search"));
-            //return driver.FindElement(By.XPath("//*[contains(text(), 'Google Search')]")); 
+            //return driver.FindElement(By.Name("Google Search"));
+            return driver.FindElement(By.XPath("//input[@Value=\"Google Search\"]")); 
         }
 
         public static IWebElement GoogleWikiSearch(IWebDriver driver)
         {
-            return driver.FindElement(By.XPath("//*[text()='Something(Beatles song) - Wikipedia']"));
+            return driver.FindElement(By.LinkText("Something(Beatles song) - Wikipedia"));
+            //return driver.FindElement(By.XPath("//*[contains(text(), 'Something(Beatles song) - Wikipedia')]")); //mozna używać *
         }
     }
 }
